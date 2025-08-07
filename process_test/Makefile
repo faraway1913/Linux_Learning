@@ -20,3 +20,9 @@ execve_test: execve_test.c erlou
 	-$(CC) -o $@ $<
 	-./$@
 	-rm ./$@ ./$(word 2,$^)
+
+
+fork_execve_test: fork_execve_test.c erlou
+	-$(CC) -o $@ $(firstword $^)
+	-./$@
+	-rm ./$@ ./$(lastword $^)
