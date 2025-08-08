@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
         return 1;   //当没有参数时，应返回非零值表示错误
     }
 
-    printf("我是%s %d, 我跟海哥上二楼啦\n",argv[1],getpid());
+    printf("我是%s编号%d,父进程%d, 我跟海哥上二楼啦\n",argv[1],getpid(),getppid());
 
     return 0;
 }

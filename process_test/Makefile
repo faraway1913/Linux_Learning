@@ -32,3 +32,9 @@ fork_execve_test_normal: fork_execve_test_normal.c erlou
 	-$(CC) -o $@ $(firstword $^)
 	-./$@
 	-rm ./$@ ./$(lastword $^)
+
+
+waitpid_test: waitpid_test.c
+	-$(CC) -o $@ $^
+	-./$@
+	-rm ./$@

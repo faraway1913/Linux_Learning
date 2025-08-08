@@ -27,8 +27,14 @@ int main(int argc, char const *argv[])
         }
     }else{
         //老学员在这里
+        sleep(1);
         printf("老学员%d邀请完%d后，还是在一楼学习\n",getpid(),pid);
     }
 
     return 0;
 }
+
+/*
+学习心得：
+进程的运行通常需要先fork()一下，复制父进程获得子进程，再将子进程用execve()替换成新的进程，这样，新进程就运行了，而父进程就变成了僵尸进程。
+*/
