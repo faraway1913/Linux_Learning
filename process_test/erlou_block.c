@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+
+int main(int argc, char const *argv[])
+{
+    if(argc < 2){
+        printf("参数不够，上不了二楼\n");
+        return 1;   //当没有参数时，应返回非零值表示错误
+    }
+
+    printf("我是%s编号%d,父进程%d, 我跟海哥上二楼啦\n",argv[1],getpid(),getppid());
+    //挂起进程
+    sleep(30);
+
+    return 0;
+}
+
+
+/*学习心得
+孤儿进程
+父进程运行结束后，子进程仍在执行，子进程就会变为孤儿进程，被祖先认领，占据系统资源且难以关闭
+*/

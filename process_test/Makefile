@@ -21,20 +21,65 @@ execve_test: execve_test.c erlou
 	-./$@
 	-rm ./$@ ./$(word 2,$^)
 
-
+#存在递归的execve案例
 fork_execve_test: fork_execve_test.c erlou
 	-$(CC) -o $@ $(firstword $^)
 	-./$@
 	-rm ./$@ ./$(lastword $^)
 
-
+#正常的execve案例
 fork_execve_test_normal: fork_execve_test_normal.c erlou
 	-$(CC) -o $@ $(firstword $^)
 	-./$@
 	-rm ./$@ ./$(lastword $^)
 
-
+#waitpid()
 waitpid_test: waitpid_test.c
 	-$(CC) -o $@ $^
 	-./$@
 	-rm ./$@
+
+#进程树
+pstree_test: pstree_test.c erlou
+	-$(CC) -o $@ $<
+	-./$@
+	-rm ./$@ ./$(lastword $^)
+
+#孤儿进程
+erlou_block: erlou_block.c
+	-$(CC) -o $@ $^
+orphan_process_test: orphan_process_test.c erlou
+	-$(CC) -o $@ $<
+	-./$@
+	-rm ./$@ ./$(lastword $^)
+
+
+perror_test: perror_test.c
+	-$(CC) -o $@ $^
+	-./$@
+	-rm ./$@
+
+
+errno_test: errno_test.c
+	-$(CC) -o $@ $^
+	-./$@
+	-rm ./$@
+
+
+process_test: process_test.c
+	-$(CC) -o $@ $^
+	-./$@
+	-rm ./$@
+
+
+unnamed_pipe_test: unnamed_pipe_test.c
+	-$(CC) -o $@ $^
+	-./$@ "test"
+	-rm ./$@
+
+
+fifo_write: fifo_write.c
+	-$(CC) -o $@ $^
+
+fifo_read: fifo_read.c
+	-$(CC) -o $@ $^
