@@ -1,5 +1,21 @@
 {
     "files.associations": {
-        "errno.h": "c"
-    }
+        "errno.h": "c",
+        "time.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c"
+    },
+    "C_Cpp IntelliSense_Engine": "Default",
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+    "C_Cpp.default.includePath": [
+        "/usr/include",
+        "/usr/local/include",
+        "/usr/include/x86_64-linux-gnu"
+    ],
+    "C_Cpp.default.defines": [
+        "_GNU_SOURCE",
+        "_POSIX_C_SOURCE=200809L"
+    ],
+    "C_Cpp.default.cStandard": "gnu11",
+    "C_Cpp.default.cppStandard": "gnu++14"
 }
