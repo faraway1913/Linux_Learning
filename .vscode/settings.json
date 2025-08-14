@@ -3,7 +3,8 @@
         "errno.h": "c",
         "time.h": "c",
         "string.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "sigevent-consts.h": "c"
     },
     "C_Cpp IntelliSense_Engine": "Default",
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
